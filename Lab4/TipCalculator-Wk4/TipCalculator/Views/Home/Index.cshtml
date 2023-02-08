@@ -1,0 +1,30 @@
+﻿@model Calculator
+
+@{
+    ViewBag.Title = "Tip Calculator";
+}
+
+<div asp-validation-summary="All"></div>
+
+<form asp-action="Index" method="post">
+    <div>
+        <label asp-for="MealCost">Cost of meal:</label>
+        <input asp-for="MealCost" />
+    </div>
+    <div>
+        <label>15% tip:</label>
+        <label>@ViewBag.Fifteen.ToString("c2")</label>
+    </div>
+    <div>
+        <label>20% tip:</label>
+        <label>@ViewBag.Twenty.ToString("c2")</label>
+    </div>
+    <div>
+        <label>25% tip:</label>
+        <label>@ViewBag.TwentyFive.ToString("c2")</label>
+    </div>
+    <div>
+        <button type="submit">Calculate</button>
+        <a asp-action="Index">Clear</a>
+    </div>
+</form>
